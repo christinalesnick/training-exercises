@@ -1,2 +1,3 @@
-# training-exercises
-code snips to assist with training for salesforce advanced topics
+# Training Exercises
+Code snippets to assist with training for Zuora for Salesforce advanced topics 
+
