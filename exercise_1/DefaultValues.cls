@@ -20,14 +20,14 @@ global class DefaultValues extends zqu.CreateQuoteController.PopulateDefaultFiel
     System.debug(funcStr + 'Enter Exercise 1.1 Step 2');
     zqu__Quote__c quote = (zqu__Quote__c) record;
 
-    if(quote.zqu__SubscriptionType__c == ''){
+    if(quoteType == ''){
 
     }
     System.debug(funcStr + 'Exit Exercise 1.1 Step 2');
 
     // Setp 3 -- Query Opportunity + Set Quote Name
     System.debug(funcStr + 'Enter Exercise 1.1 Step 3');
-    Opportunity opp = [SELECT Id FROM Opportunity WHERE Id = ''];
+    List<Opportunity> opp = [SELECT Id FROM Opportunity WHERE Id = ''];
     quote.Name = '';
     System.debug(funcStr + 'Exit Exercise 1.1 Step 3');
 
@@ -37,7 +37,7 @@ global class DefaultValues extends zqu.CreateQuoteController.PopulateDefaultFiel
 
     // Step 1 -- If Amendment Quote Query Quote Templates with Quote Type equal to Amend Subscription
     System.debug(funcStr + 'Enter Exercise 1.2 Step 1');
-    List<zqu__Quote_Template__c> quoteTemplateList = [Select Id FROM zqu__Quote_Template__c WHERE zqu__Quote_Type__c = ''];
+    List<zqu__Quote_Template__c> quoteTemplateList = [SELECT Id FROM zqu__Quote_Template__c WHERE zqu__Quote_Type__c = ''];
     System.debug(funcStr + 'Exit Exercise 1.2 Step 1');
 
     // Step 2 -- Set Lookup Options
